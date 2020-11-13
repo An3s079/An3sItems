@@ -35,12 +35,13 @@ namespace An3sMod
             ItemBuilder.SetupItem(item, shortDesc, longDesc, "ans");
 
             //Set the cooldown type and duration of the cooldown
-            ItemBuilder.SetCooldownType(item, ItemBuilder.CooldownType.Damage, 650f);
+            ItemBuilder.SetCooldownType(item, ItemBuilder.CooldownType.Damage, 700f);
 
+            ItemBuilder.AddPassiveStatModifier(item, PlayerStats.StatType.Curse, 2);
 
             //Set some other fields
             item.consumable = false;
-            item.quality = PickupObject.ItemQuality.B;
+            item.quality = PickupObject.ItemQuality.A;
 
 
         }
@@ -53,8 +54,7 @@ namespace An3sMod
         public AIActor buddy3;
         protected override void DoEffect(PlayerController owner)
         {
-            for (int i = 0; i <= 3; i++)
-            {
+            
                 try
                 {
                    
@@ -64,8 +64,7 @@ namespace An3sMod
                     if (flag)
                     {
                         
-                        if (i == 1)
-                        {
+                        
                             AIActor one = AIActor.Spawn(orLoadByGuid.aiActor, intVector.Value, GameManager.Instance.Dungeon.data.GetAbsoluteRoomFromPosition(intVector.Value), true, AIActor.AwakenAnimationType.Default, true);
                             one.IgnoreForRoomClear = true;
                             CompanionController companionComponent = one.gameObject.GetOrAddComponent<CompanionController>();
@@ -75,47 +74,17 @@ namespace An3sMod
                             companionisedBullets.jammedDamageMultiplier = 2f;
                             companionisedBullets.TintBullets = true;
                             companionisedBullets.TintColor = Color.yellow;
-                            companionisedBullets.baseBulletDamage = 7f;
+                            companionisedBullets.baseBulletDamage = 3f;
                             one.gameObject.AddComponent<KillOnRoomClear>();
 
-                        }
-                        if (i == 2)
-                        {
-                            AIActor two = AIActor.Spawn(orLoadByGuid.aiActor, intVector.Value, GameManager.Instance.Dungeon.data.GetAbsoluteRoomFromPosition(intVector.Value), true, AIActor.AwakenAnimationType.Default, true);
-                            two.IgnoreForRoomClear = true;
-                            CompanionController companionComponent = two.gameObject.GetOrAddComponent<CompanionController>();
-                            companionComponent.companionID = CompanionController.CompanionIdentifier.NONE;
-                            companionComponent.Initialize(owner);
-                            CompanionisedEnemyBulletModifiers companionisedBullets = two.gameObject.GetOrAddComponent<CompanionisedEnemyBulletModifiers>();
-                            companionisedBullets.jammedDamageMultiplier = 2f;
-                            companionisedBullets.TintBullets = true;
-                            companionisedBullets.TintColor = Color.yellow;
-                            companionisedBullets.baseBulletDamage = 7f;
-                            two.gameObject.AddComponent<KillOnRoomClear>();
-                            
-                        }
-                        if (i == 3)
-                        {
-                            AIActor three = AIActor.Spawn(orLoadByGuid.aiActor, intVector.Value, GameManager.Instance.Dungeon.data.GetAbsoluteRoomFromPosition(intVector.Value), true, AIActor.AwakenAnimationType.Default, true);
-                            three.IgnoreForRoomClear = true;
-                            CompanionController companionComponent = three.gameObject.GetOrAddComponent<CompanionController>();
-                            companionComponent.companionID = CompanionController.CompanionIdentifier.NONE;
-                            companionComponent.Initialize(owner);
-                            CompanionisedEnemyBulletModifiers companionisedBullets = three.gameObject.GetOrAddComponent<CompanionisedEnemyBulletModifiers>();
-                            companionisedBullets.jammedDamageMultiplier = 2f;
-                            companionisedBullets.TintBullets = true;
-                            companionisedBullets.TintColor = Color.yellow;
-                            companionisedBullets.baseBulletDamage = 7f;
-                            three.gameObject.AddComponent<KillOnRoomClear>();
-
-                        }
+                        
                     }
                 }
                 catch (Exception ex)
                 {
                     ETGModConsole.Log(ex.Message, false);
                 }
-            }
+            
 
 
 
