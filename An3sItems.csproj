@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6D7A494-722E-4763-959B-C2D6B6A42B01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>An3sMod</RootNamespace>
+    <AssemblyName>An3sMod</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp.Base.mm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\Assembly-CSharp.Base.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="PlayMaker, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\PlayMaker.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.Base.mm">
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\UnityEngine.Base.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule.Base.mm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\UnityEngine.CoreModule.Base.mm.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CustomItems\CustomItems\bin\Debug\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CleansingWater.cs" />
+    <Compile Include="CodeToolbox.cs" />
+    <Compile Include="CustomGungeonFlags.cs" />
+    <Compile Include="FearBullets.cs" />
+    <Compile Include="GoopIdentifier.cs" />
+    <Compile Include="GungeonAPI\DungeonHandler.cs" />
+    <Compile Include="GungeonAPI\DungeonHooks.cs" />
+    <Compile Include="GungeonAPI\GungeonAPI.cs" />
+    <Compile Include="GungeonAPI\HitboxMonitor.cs" />
+    <Compile Include="GungeonAPI\MakeItemsModded.cs" />
+    <Compile Include="GungeonAPI\NPCBuilder.cs" />
+    <Compile Include="GungeonAPI\OfficialFlows.cs" />
+    <Compile Include="GungeonAPI\ModdedNPC.cs" />
+    <Compile Include="GungeonAPI\ModdedNPCInteractible.cs" />
+    <Compile Include="GungeonAPI\RandomNPCInteractible.cs" />
+    <Compile Include="GungeonAPI\ResourceExtractor.cs" />
+    <Compile Include="GungeonAPI\RoomFactory.cs" />
+    <Compile Include="GungeonAPI\SampleFlow.cs" />
+    <Compile Include="GungeonAPI\ShrineFactory.cs" />
+    <Compile Include="GungeonAPI\ShrineFakePrefab.cs" />
+    <Compile Include="GungeonAPI\ShrineFakePrefabHooks.cs" />
+    <Compile Include="GungeonAPI\SimpleInteractable.cs" />
+    <Compile Include="GungeonAPI\SimpleShrine.cs" />
+    <Compile Include="GungeonAPI\StaticReferences.cs" />
+    <Compile Include="GungeonAPI\TextureStitcher.cs" />
+    <Compile Include="GungeonAPI\Tools.cs" />
+    <Compile Include="LeatherJacket.cs" />
+    <Compile Include="LichBullets.cs" />
+    <Compile Include="OldWarStealthkit.cs" />
+    <Compile Include="portableVampire.cs" />
+    <Compile Include="RandomGun.cs" />
+    <Compile Include="RubberBullets.cs" />
+    <Compile Include="SkeletonArmy.cs" />
+    <Compile Include="TentacleRounds.cs" />
+    <Compile Include="GungeonAPI\TheAngel.cs" />
+    <Compile Include="GungeonAPI\TheAngelInteractible.cs" />
+    <Compile Include="ThreateningAura.cs" />
+    <Compile Include="ItemAPI\CompanionBuilder.cs" />
+    <Compile Include="ItemAPI\CustomSynergies.cs" />
+    <Compile Include="CoolerHeartContainer.cs" />
+    <Compile Include="ItemAPI\FakePrefab\FakePrefab.cs" />
+    <Compile Include="ItemAPI\FakePrefab\FakePrefabHooks.cs" />
+    <Compile Include="ItemAPI\ItemBuilder.cs" />
+    <Compile Include="ItemAPI\Tools.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ItemAPI\ResourceExtractor.cs" />
+    <Compile Include="ItemAPI\SpriteBuilder.cs" />
+    <Compile Include="WaterAmmolet.cs" />
+    <Compile Include="Whip.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TheCoolerHeartContainer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ThreateningAura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ScaredBullets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\WaterAmmolet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\LichBullet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TentacleRounds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CleansingWater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\OldWarStealthKit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\portableVampire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BookofNecromancy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\RubberBullets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\jacket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EasyNPC\EasyMode_icon.png" />
+    <EmbeddedResource Include="Resources\EasyNPC\EaseyNPC_shadow_001.png" />
+    <EmbeddedResource Include="Resources\EasyNPC\EasyNPC_idle_002.png" />
+    <EmbeddedResource Include="Resources\EasyNPC\EasyNPC_idle_003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EasyNPC\EasyNPC_idle_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EasyNPC\EasyNPC_idle_004.png" />
+    <EmbeddedResource Include="Resources\EasyNPC\EasyNPC_idle_005.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EasyNPC\EasyNPC_talk_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_idle_002.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_idle_004.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_idle_005.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_idle_001.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_idle_003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_talk_001.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_talk_002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_talk_003.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_talk_004.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_talk_005.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_talk_006.png" />
+    <EmbeddedResource Include="Resources\ModdedNPC\ModdedNPC_talk_007.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
